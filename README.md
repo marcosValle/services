@@ -10,7 +10,6 @@ The NAT Network had VBox's DHCP disabled so one of the VMs could act as the loca
 
 ## Example /etc/network/interfaces
 ~~~~
-root@debian:/home/valle/services# cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
