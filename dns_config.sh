@@ -29,7 +29,7 @@ genKey
 cp dns/named.conf.local /etc/bind/named.conf.local
 cp dns/named.conf.options /etc/bind/named.conf.options
 cp dns/db.gciber.com /etc/bind/db.gciber.com
-cp dns/db.192 /etc/bind/db.192 # change IP range. Better yet, move this to a config file
+cp dns/db.10.0.2 /etc/bind/db.10.0.2 # change IP range. Better yet, move this to a config file
 
 chown bind:bind /etc/bind
 /etc/init.d/bind9 restart
