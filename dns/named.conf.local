@@ -2,18 +2,20 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-include "/etc/bind/ddns.key";
+//include "/etc/bind/ddns.key";
 
 zone "gciber.com" {
      type master;
      notify no;
      file "/etc/bind/db.gciber.com";
-     allow-update { key DDNS_UPDATE; };
+     allow-transfer { none; };
+//     allow-update { key DDNS_UPDATE; };
 };
 
 zone "2.0.10.in-addr.arpa" {
     type master;
     notify no;
     file "/etc/bind/db.10.0.2";
-    allow-update { key DDNS_UPDATE ; }; 
+    allow-transfer { none; };
+//    allow-update { key DDNS_UPDATE ; }; 
 };
