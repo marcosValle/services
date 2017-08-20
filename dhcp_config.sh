@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# check if root
+source utils.sh
 
-# install dhcp-server
-apt update
+checkRoot
+up
 apt install isc-dhcp-server
-
-# apply wiki.debian.org/Postfix
-
-#set to start at boot
+cp dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
+/etc/init.d/isc-dhcp-server restart
