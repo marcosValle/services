@@ -31,9 +31,23 @@ function createVHosts {
 }
 
 checkRoot
+
+chown root:root /etc/apache2
+chmod -R 750 /etc/apache2
+a2dismod autoindex
+
+cp http/security.conf /etc/apache2/conf-available/security.conf
+a2enconf
+
+# enable modsecurity
+apt-get install -y modsecurity-crs libapache2-modsecurity
+cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+a2enmod security2
+
 #up
 #apt install apache2
 #add mod_security
 #add fail2ban
 bannerDisable
-service apache2 restart
+systemctl reload apache2
+systemctl restart apache2
