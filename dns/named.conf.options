@@ -10,19 +10,22 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	forwarders {
-	    8.8.8.8;
-	    8.8.8.4;
-	 };
-	
+	# replace version banner
+	version "### DNS SEGURO ###";
+
 	allow-query {
-	    192.168.0.0/24;
+	    10.0.2.0/24;
 	    127.0.0.1;
 	};
 
 	allow-transfer {
-	    192.168.0.0/24;
+	    10.0.2.0/24;
 	    127.0.0.1;  
+	};
+
+	allow-recursion {
+	    127.0.0.1;
+	    10.0.2.0/24;
 	};
 
 	//========================================================================
