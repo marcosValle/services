@@ -34,6 +34,10 @@ mkdir -p $SHARE_PATH
 echo "Setting smb.conf..."
 cp smb/smb.conf /etc/samba/smb.conf
 
+echo "Setting correct permissions to folder..."
+chown $USR:$USR $SHARE_PATH
+chmod -R 770 $SHARE_PATH
+
 # Restart samba service
 echo "Restarting samba..."
 systemctl restart smbd.service
