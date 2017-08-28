@@ -8,20 +8,9 @@
 
 source utils.sh
 
-function genKey {
-    dnssec-keygen -a HMAC-MD5 -b 128 -r /dev/urandom -n USER DDNS_UPDATE
-    key=$(sed -n "/Key/p" Kddns_update.*.private | cut -d" " -f2)
-    sed -i "s/<key>/$key/" dns/ddns.key
-    cp dns/ddns.key /etc/bind/
-    cp dns/ddns.key /etc/dhcp/
-
-    chown root:bind /etc/bind/ddns.key
-    chown root:root /etc/dhcp/ddns.key
-
-    chmod 640 /etc/bind/ddns.key
-    chmod 640 /etc/bind/ddns.key
+function hardening {
+    chmod 640 /etc/bind/named.conf*
 }
-
 checkRoot
 up
 apt install bind9 bind9-doc -y
