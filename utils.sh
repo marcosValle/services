@@ -17,3 +17,6 @@ function up {
     apt update -y && apt dist-upgrade -y
 }
 
+function checkUserExists {
+    return id -u $1 > /dev/null 2>&1; echo $?
+}
