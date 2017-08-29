@@ -1,0 +1,9 @@
+PF=$(which iptables)
+
+malformed() {
+    for CHAINS in INPUT FORWARD
+    do
+        $PF -A $CHAINS -m state --state INVALID -j LOG --log-prefix "Bad pkt"
+        $PF -A $CHAINS -m state --state INVALID -j DROP
+    done
+}
