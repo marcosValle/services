@@ -11,9 +11,10 @@ $TTL 604800	; 1 week
 
 @	IN		NS	ns.gciber.com.
 @       IN              MX  10  webmail.gciber.com  
-@	IN		A	10.0.2.102
+@	IN		A	10.0.2.4
 
-ns	    IN		A	10.0.2.1
-intranet    IN		A	10.0.2.102
-ftp	    IN		A	10.2.2.102
-webmail     IN          A       10.0.2.102
+ns	    IN		A	10.0.2.2
+intranet    IN		A	10.0.2.4
+mvalle	    IN		A	10.0.2.4
+ftp	    IN		A	10.0.2.4
+webmail     IN          A       10.0.2.4
